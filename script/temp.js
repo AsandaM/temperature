@@ -1,38 +1,50 @@
-let input = document.querySelectorAll('input')[0]
-let input1 = document.querySelectorAll('input')[1]
-let input2 = document.querySelectorAll('input')[2]
+let inputCelsius = document.querySelectorAll('input')[0]
+let inputFahrenheit = document.querySelectorAll('input')[1]
+let inputKelvin = document.querySelectorAll('input')[2]
 
-let btn = document.querySelector('button')
+let btnConvert = document.querySelector('button')
 
-function d() {
-    if(input.value){
-        input1.value = eval(`${(input.value)}* 9 / 5 + ${32}`)
-        input2.value = eval(`${(input.value)} + ${273.15}`)
+function convertFromCelsius() {
+    if(inputCelsius.value){
+        let celsius = parseFloat(inputCelsius.value)
+        inputFahrenheit.value = (celsius * 9 / 5 + 32).toFixed(2)
+        inputKelvin.value = (celsius + 273.15).toFixed(2)
 
     }
 }
 
-function f() {
-    if (input1.value) {
-        input.value = ((input1.value - 32) * 5) / 9
-        input2.value = eval(`${(input1.value - 32)} * 5 / 9 + ${273.15}`)
+function convertFromFahrenheit() {
+    if (inputFahrenheit.value) {
+
+        let fahrenheit = parseFloat(inputFahrenheit.value)
+        inputCelsius.value = ((fahrenheit - 32) * 5 / 9).toFixed(2)
+        inputKelvin.value = (((fahrenheit - 32) * 5 / 9 ) + 273.15).toFixed(2)
         
     }
 }
 
-function k() {
-    if (input2.value) {
-        input.value = eval(`${(input2.value - 273.15)} * 9 /5 + ${32}`)
-        input1.value = eval(`${(input2.value )} - ${273.15}`)
+function convertFromKelvin() {
+    if (inputKelvin.value) {
+
+        let kelvin = parseFloat(inputKelvin.value)
+        inputCelsius.value = (kelvin - 273.15).toFixed(2)
+        inputFahrenheit.value = ((kelvin - 273.15) * 9 / 5 + 32).toFixed(2)
         
     }
 }
 
 function convertAll() {
-    if(input.value !="") d();
-    if(input1.value!="")f();
-    if(input2.value!="")k();
+    if(inputCelsius.value !== ""){
+      convertFromCelsius();  
+    } else if (inputFahrenheit.value !== ""){
+        convertFromFahrenheit();
+    } else if(inputKelvin.value !== ""){
+        convertFromKelvin();
+    }
+    
  
 }
 
- btn.addEventListener('click', convertAll)
+
+
+ btnConvert.addEventListener('click', convertAll)

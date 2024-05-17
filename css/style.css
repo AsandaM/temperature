@@ -1,0 +1,20 @@
+body{
+    background-color: aqua;
+}
+
+.d-grid{
+    background-color: aquamarine;
+}
+
+/* Media query for small screens */
+@media (max-width: 1442px) {
+    label {
+        font-size: 0.875rem; /* Adjust label font size for small screens */
+    }
+}
+
+/* Additional container adjustments if needed */
+.container {
+    max-width: 100%; /* Ensure container uses full available width */
+    padding: 1rem; /* Add padding to the container */
+}

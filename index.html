@@ -8,16 +8,30 @@
     <title>Temperature Converter</title>
 </head>
 <body>
+    <div class="container mt-5">
+        <p class="fs-1 fw-bold font-monospace text-decoration-underline text-center">Temperature Converter</p>
+    
+        <div class="d-grid gap-2 col-6 mx-auto border p-4 rounded">
+            <div class="row mb-3 justify-content-center">
+                <div class="col-4"><label for="DegreeCelsius" class="text-end">Degree Celsius</label></div>
+                <div class="col-4"><label for="Kelvin" class="text-center">Fahrenheit</label></div>
+                <div class="col-4"><label for="Fahrenheit" class="text-start">Kelvin</label></div>
+            </div>
+            <div class="row mb-3 justify-content-center">
+                <div class="col-4"><input type="text" class="form-control"></div>
+                <div class="col-4"><input type="text" class="form-control"></div>
+                <div class="col-4"><input type="text" class="form-control"></div>
+            </div>
+            
+          </div>
+    
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-light" type="button">Convert</button>
+          </div>
+          <!-- <button type="button" class="btn btn-dark">Convert</button> -->
 
-    <div class="d-flex flex-row mb-3">
-        <div class="p-2"><label for="DegreeCelsius">Degree Celsius</label>
-            <input type="text"></div>
-        <div class="p-2"><label for="Kelvin">Fahrenheit</label>
-            <input type="text"></div>
-        <div class="p-2"><label for="Fahrenheit">Kelvin </label>
-            <input type="text"></div>
-      </div>
-      <button type="button" class="btn btn-dark">Convert</button>
+
+    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./script/temp.js"></script>
